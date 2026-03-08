@@ -154,18 +154,15 @@ elif menu == "💊 Calculadora PK/PD de Precisão":
 
 # --- MÓDULO 3: TABELA 6 ---
 elif menu == "📊 Tabela 6 (Visão Geral)":
-    st.header("Tabela 6: Insira o Título da Tabela Aqui") 
-    st.markdown("Visão geral dos dados consolidados da unidade.")
+    st.header("Tabela 6: Dados Consolidados") 
+    st.markdown("Visão geral extraída diretamente da Tese Original.")
 
-    dados_tabela_6 = {
-        "Variável / Microrganismo": ["Dado A", "Dado B", "Dado C", "Dado D"],
-        "Valor N": [10, 25, 40, 15],
-        "Porcentagem (%)": [15.5, 30.2, 45.0, 9.3]
-    }
-    
-    df_tab6 = pd.DataFrame(dados_tabela_6)
-    st.table(df_tab6)
+    # Tenta carregar a imagem da tabela. Se o arquivo não for encontrado, exibe um aviso amigável.
+    try:
+        st.image("tabela6.png", caption="Tabela 6 - Fonte: UTI Santa Casa de Sorocaba", use_container_width=True)
+    except FileNotFoundError:
+        st.warning("⚠️ Imagem 'tabela6.png' não encontrada. Por favor, certifique-se de que o arquivo da imagem foi salvo com este nome exato e enviado para o servidor.")
 
 # Rodapé
 st.sidebar.markdown("---")
-st.sidebar.info("**Combate Biológico v5.0**\nRadar PK/PD Atualizado.")
+st.sidebar.info("**Combate Biológico v5.1**\nExibição visual da Tabela 6.")
