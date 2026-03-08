@@ -241,3 +241,4 @@ st.sidebar.info("**Combate Biológico v5.1**\nExibição visual da Tabela 6.")
 
 
 
+
