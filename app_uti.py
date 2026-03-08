@@ -129,3 +129,43 @@ elif menu == "💊 Calculadora PK/PD de Precisão":
         st.info("Evite fracionar a dose (ex: de 12/12h). Calcule a dose total pelo peso (ex: Amicacina 25mg/kg) e administre de uma só vez.")
 
     elif drug == "Teicoplanina":
+        st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
+        st.markdown("*O objetivo é maximizar a quantidade total de exposição ao antibiótico no sangue ao longo de 24 horas.*")
+        st.success("✅ Posologia Estratégica: Manutenção **1x ao dia** (após as doses de ataque).")
+        st.info("Atenção: A dose de ataque (a cada 12h nas primeiras 48 a 72h) é crucial antes de passar para o regime de 1x ao dia.")
+
+    elif drug == "Vancomicina":
+        st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
+        st.markdown("*O objetivo é maximizar a exposição diária ao fármaco, garantindo eficácia sem atingir níveis tóxicos para os rins.*")
+        st.success("✅ Posologia Estratégica: Habitualmente de **12/12h** ou **Infusão Contínua**.")
+        st.info("O ajuste rigoroso deve ser feito através da Vancocinemia (Nível Sérico), buscando níveis de vale adequados para infecções graves.")
+
+    elif drug == "Polimixina B":
+        st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
+        st.markdown("*O objetivo é exposição total ao longo do dia para destruir a membrana externa dos bacilos Gram-negativos multirresistentes.*")
+        st.success("✅ Posologia Estratégica: **De 12/12h** (Sempre requer Dose de Ataque).")
+        st.info("A Polimixina B NÃO requer ajuste para função renal. A dose de ataque inicial (ex: 20.000 a 25.000 UI/kg) é obrigatória para atingir o alvo rapidamente.")
+
+    elif drug == "Fluoroquinolonas (Cipro/Levofloxacino)":
+        st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
+        st.markdown("*Fármacos concentração-dependentes onde a exposição total (quantidade) nas 24h dita o sucesso terapêutico.*")
+        st.success("✅ Posologia Estratégica: Levofloxacino **1x ao dia** / Ciprofloxacino **12/12h** ou **8/8h**.")
+        st.info("Atenção ao ajuste renal. Possuem excelente biodisponibilidade oral, permitindo transição IV-VO precoce se o trato gastrointestinal estiver funcionante.")
+
+# --- MÓDULO 3: TABELA 6 ---
+elif menu == "📊 Tabela 6 (Visão Geral)":
+    st.header("Tabela 6: Insira o Título da Tabela Aqui") 
+    st.markdown("Visão geral dos dados consolidados da unidade.")
+
+    dados_tabela_6 = {
+        "Variável / Microrganismo": ["Dado A", "Dado B", "Dado C", "Dado D"],
+        "Valor N": [10, 25, 40, 15],
+        "Porcentagem (%)": [15.5, 30.2, 45.0, 9.3]
+    }
+    
+    df_tab6 = pd.DataFrame(dados_tabela_6)
+    st.table(df_tab6)
+
+# Rodapé
+st.sidebar.markdown("---")
+st.sidebar.info("**Combate Biológico v5.0**\nRadar PK/PD Atualizado.")
