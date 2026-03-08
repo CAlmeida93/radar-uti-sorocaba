@@ -134,7 +134,7 @@ elif menu == "💊 Calculadora PK/PD de Precisão":
 
     elif drug == "Piperacilina/tazobactam":
         st.subheader("🎯 Alvo: **T > MIC** (Tempo acima da MIC)")
-        st.markdown("*O objetivo é manter a concentração do antibiótico no sangue acima da Concentração Inibitória Mínima pelo maior tempo possível entre as doses.*")st.markdown
+        st.markdown("*O objetivo é manter a concentração do antibiótico no sangue acima da Concentração Inibitória Mínima pelo maior tempo possível entre as doses.*")
         st.success("✅ Posologia Estratégica: **Infusão Estendida (3 a 4 horas)**.")
         st.info("Evite fracionar a dose (ex: de 12/12h)".
         
@@ -236,6 +236,7 @@ elif menu == "📊 Tabela 6 (Visão Geral)":
 # Rodapé
 st.sidebar.markdown("---")
 st.sidebar.info("**Combate Biológico v5.1**\nExibição visual da Tabela 6.")
+
 
 
 
