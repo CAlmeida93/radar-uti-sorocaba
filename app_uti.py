@@ -104,29 +104,51 @@ elif menu == "💊 Calculadora PK/PD de Precisão":
     st.markdown("Selecione o antimicrobiano para visualizar o alvo farmacodinâmico e a posologia recomendada.")
     
     lista_pkpd = [
-        "Beta-lactâmicos (Meropenem, Cefepima, Ceftazidima)", 
-        "Aminoglicosídeos (Amicacina, Gentamicina)", 
-        "Teicoplanina", 
-        "Vancomicina", 
-        "Polimixina B", 
-        "Fluoroquinolonas (Cipro/Levofloxacino)"
+        "Oxacilina", 
+        "Piperacilina/tazobactam", 
+        "Meropenem", 
+        "Ampicilina/Sulbactam ", 
+        "Teicoplanina ", 
+        "Vancomicina",
+        "Claritromicina ", 
+        "Clindamicina", 
+        "Cefepima", 
+        "Cefazolina", 
+        "Ceftriaxona", 
+        "Ciprofloxacino", 
+        "SXT",
+        "Metronidazol", 
+        "Amicacina", 
+        "Polimixina B",
     ]
     
     drug = st.selectbox("Escolha a Classe / Antimicrobiano", lista_pkpd)
     
     st.markdown("---")
     
-    if drug == "Beta-lactâmicos (Meropenem, Cefepima, Ceftazidima)":
+    if drug == "Oxacilina":
         st.subheader("🎯 Alvo: **T > MIC** (Tempo acima da MIC)")
         st.markdown("*O objetivo é manter a concentração do antibiótico no sangue acima da Concentração Inibitória Mínima pelo maior tempo possível entre as doses.*")
         st.success("✅ Posologia Estratégica: **Infusão Estendida (3 a 4 horas)** ou **Infusão Contínua**.")
         st.info("Aumentar a dose em bolus rápido não melhora a eficácia. O segredo é prolongar o tempo de gotejamento na bomba de infusão (especialmente se ClCr > 50 mL/min).")
 
-    elif drug == "Aminoglicosídeos (Amicacina, Gentamicina)":
-        st.subheader("🎯 Alvo: **Cmax / MIC** (Pico de Concentração Máxima)")
-        st.markdown("*O objetivo é atingir um pico de concentração muito alto, rápido e transitório, para gerar morte bacteriana imediata e evitar toxicidade renal prolongada.*")
-        st.success("✅ Posologia Estratégica: **1x ao dia** (Dose Única Diária).")
-        st.info("Evite fracionar a dose (ex: de 12/12h). Calcule a dose total pelo peso (ex: Amicacina 25mg/kg) e administre de uma só vez.")
+    elif drug == "Piperacilina/tazobactam":
+        st.subheader("🎯 Alvo: **T > MIC** (Tempo acima da MIC)")
+        st.markdown("*O objetivo é manter a concentração do antibiótico no sangue acima da Concentração Inibitória Mínima pelo maior tempo possível entre as doses.*")st.markdown
+        st.success("✅ Posologia Estratégica: **Infusão Estendida (3 a 4 horas)**.")
+        st.info("Evite fracionar a dose (ex: de 12/12h).
+        
+    elif drug == "Meropenem":
+        st.subheader("🎯 Alvo: **T > MIC** (Tempo acima da MIC)")
+        st.markdown("*O objetivo é manter a concentração do antibiótico no sangue acima da Concentração Inibitória Mínima pelo maior tempo possível entre as doses.*")st.markdown
+        st.success("✅ Posologia Estratégica: **Infusão de 8 horas**.")
+        st.info("Evite fracionar a dose (ex: de 12/12h).
+        
+     elif drug == "Ampicilina/Sulbactam":
+        st.subheader("🎯 Alvo: **T > MIC** (Tempo acima da MIC)")
+        st.markdown("*O objetivo é manter a concentração do antibiótico no sangue acima da Concentração Inibitória Mínima pelo maior tempo possível entre as doses.*")st.markdown
+        st.success("✅ Posologia Estratégica: **Infusão Estendida (3 a 4 horas)**.")
+        st.info("Evite fracionar a dose (ex: de 12/12h).
 
     elif drug == "Teicoplanina":
         st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
@@ -137,20 +159,68 @@ elif menu == "💊 Calculadora PK/PD de Precisão":
     elif drug == "Vancomicina":
         st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
         st.markdown("*O objetivo é maximizar a exposição diária ao fármaco, garantindo eficácia sem atingir níveis tóxicos para os rins.*")
-        st.success("✅ Posologia Estratégica: Habitualmente de **12/12h** ou **Infusão Contínua**.")
+        st.success("✅ Posologia Estratégica: Habitualmente de **12/12h**.")
         st.info("O ajuste rigoroso deve ser feito através da Vancocinemia (Nível Sérico), buscando níveis de vale adequados para infecções graves.")
 
-    elif drug == "Polimixina B":
+    elif drug == "Claritromicina":
+        st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
+        st.markdown("*O objetivo é maximizar a exposição diária ao fármaco, garantindo eficácia sem atingir níveis tóxicos para os rins.*")
+        st.success("✅ Posologia Estratégica: Habitualmente de **12/12h**.")
+        st.info("...")
+
+    elif drug == "Ceftriaxona":
+        st.subheader("🎯 Alvo: **T > MIC** (Tempo acima da MIC)")
+        st.markdown("*O objetivo é exposição total ao longo do dia para destruir a membrana externa dos bacilos Gram-negativos multirresistentes.*")
+        st.success("✅ Posologia Estratégica: Habitualmente de **12/12h**.")
+        st.info("...")
+    
+    elif drug == "Ciprofloxacino":
         st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
         st.markdown("*O objetivo é exposição total ao longo do dia para destruir a membrana externa dos bacilos Gram-negativos multirresistentes.*")
-        st.success("✅ Posologia Estratégica: **De 12/12h** (Sempre requer Dose de Ataque).")
-        st.info("A Polimixina B NÃO requer ajuste para função renal. A dose de ataque inicial (ex: 20.000 a 25.000 UI/kg) é obrigatória para atingir o alvo rapidamente.")
-
-    elif drug == "Fluoroquinolonas (Cipro/Levofloxacino)":
+        st.success("✅ Posologia Estratégica: Habitualmente de **12/12h**.")
+        st.info("...")
+        
+    elif drug == "SXT":
         st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
+        st.markdown("*O objetivo é exposição total ao longo do dia para destruir a membrana externa dos bacilos Gram-negativos multirresistentes.*")
+        st.success("✅ Posologia Estratégica: Habitualmente de **12/12h**.")
+        st.info("...")
+        
+    elif drug == "Metronidazol":
+        st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
+        st.markdown("*O objetivo é exposição total ao longo do dia para destruir a membrana externa dos bacilos Gram-negativos multirresistentes.*")
+        st.success("✅ Posologia Estratégica: Habitualmente de **8/8h**.")
+        st.info("...")    
+    
+    elif drug == "Clindamicina":
+        st.subheader("🎯 Alvo: **AUC / MIC** (Área Sob a Curva)")
+        st.markdown("*O objetivo é exposição total ao longo do dia para destruir a membrana externa dos bacilos Gram-negativos multirresistentes.*")
+        st.success("✅ Posologia Estratégica: Habitualmente de **8/8h**.")
+        st.info("...")
+
+    elif drug == "Cefepima":
+        st.subheader("🎯 Alvo: **T > MIC** (Tempo acima da MIC)")
+        st.markdown("*O objetivo é exposição total ao longo do dia para destruir a membrana externa dos bacilos Gram-negativos multirresistentes.*")
+        st.success("✅ Posologia Estratégica: Habitualmente de **8/8h**.")
+        st.info("...")
+
+    elif drug == "Cefazolina":
+        st.subheader("🎯 Alvo: **T > MIC** (Tempo acima da MIC)")
+        st.markdown("*O objetivo é exposição total ao longo do dia para destruir a membrana externa dos bacilos Gram-negativos multirresistentes.*")
+        st.success("✅ Posologia Estratégica: Habitualmente de **8/8h**.")
+        st.info("...")
+        
+    elif drug == "Amicacina":
+        st.subheader("🎯 Alvo: **Cmax / MIC** (Área Sob a Curva)")
         st.markdown("*Fármacos concentração-dependentes onde a exposição total (quantidade) nas 24h dita o sucesso terapêutico.*")
-        st.success("✅ Posologia Estratégica: Levofloxacino **1x ao dia** / Ciprofloxacino **12/12h** ou **8/8h**.")
-        st.info("Atenção ao ajuste renal. Possuem excelente biodisponibilidade oral, permitindo transição IV-VO precoce se o trato gastrointestinal estiver funcionante.")
+        st.success("✅ Posologia Estratégica: **1x ao dia**.")
+        st.info("...")
+
+    elif drug == "Polimixina B":
+        st.subheader("🎯 Alvo: **Cmax / MIC** (Área Sob a Curva)")
+        st.markdown("*Fármacos concentração-dependentes onde a exposição total (quantidade) nas 24h dita o sucesso terapêutico.*")
+        st.success("✅ Posologia Estratégica: **12/12h**.")
+        st.info("...")
 
 # --- MÓDULO 3: TABELA 6 ---
 elif menu == "📊 Tabela 6 (Visão Geral)":
@@ -166,3 +236,4 @@ elif menu == "📊 Tabela 6 (Visão Geral)":
 # Rodapé
 st.sidebar.markdown("---")
 st.sidebar.info("**Combate Biológico v5.1**\nExibição visual da Tabela 6.")
+
